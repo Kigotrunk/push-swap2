@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 12:38:37 by kortolan          #+#    #+#             */
-/*   Updated: 2023/05/28 19:38:04 by marvin           ###   ########.fr       */
+/*   Updated: 2023/05/29 15:10:21 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,7 @@ int main (int argc, char **argv)
     if (argc == 1)
         return (0);
     parsing(&stack_a, argc, argv);
+    if (argc <= 5)
+        little_arg((*stack_a), (*stack_a));
+    
 }
