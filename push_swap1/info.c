@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-int max(Element *arg)
+int max(t_element *arg)
 {
     int max;
 
@@ -27,7 +27,7 @@ int max(Element *arg)
     return (max);
 }
 
-int first_min(Element *arg)
+int first_min(t_element *arg)
 {
     int min;
 
@@ -42,7 +42,22 @@ int first_min(Element *arg)
     return (min);
 }
 
-int second_min(Element *arg)
+int first_min_index(t_element *arg)
+{
+    int min;
+
+    min = arg->number;
+    arg = arg->next
+    while (arg)
+    {
+        if (arg->number < min && arg->index == -1)
+            min = arg->number;
+        arg = arg->next;
+    }
+    return (min);
+}
+
+int second_min(t_element *arg)
 {
     int min;
     int min2;

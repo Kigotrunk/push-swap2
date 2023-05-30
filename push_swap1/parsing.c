@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void    parsing (Element **sequence, int argc, char **argv)
+void    parsing (t_element **sequence, int argc, char **argv)
 {
     int nb_arg;
     int j;
@@ -26,7 +26,7 @@ void    parsing (Element **sequence, int argc, char **argv)
 
 }
 
-void    add_Element(Element **sequence, char *arg)
+void    add_Element(t_element **sequence, char *arg)
 {
     int i;
 
@@ -38,10 +38,10 @@ void    add_Element(Element **sequence, char *arg)
     *sequence = lstnew(i, *sequence);        
 }
 
-void    same_number(Element *arg)
+void    same_number(t_element *arg)
 {
-    Element temp;
-    Element temp1;
+    t_element temp;
+    t_element temp1;
     int     nb_of_same;
 
     temp = arg;

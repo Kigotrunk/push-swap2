@@ -6,7 +6,7 @@
 /*   By: kortolan <kortolan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 12:38:37 by kortolan          #+#    #+#             */
-/*   Updated: 2023/05/30 17:16:03 by kortolan         ###   ########.fr       */
+/*   Updated: 2023/05/30 18:45:32 by kortolan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int main (int argc, char **argv)
 {
-    Element *stack_a;
-    Element *stack_b;
+    t_element *stack_a;
+    t_element *stack_b;
     int     i;
 
     if (argc == 1)

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   rule_r.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kortolan <kortolan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 15:45:24 by kortolan          #+#    #+#             */
-/*   Updated: 2023/05/29 12:49:12 by marvin           ###   ########.fr       */
+/*   Updated: 2023/05/30 18:45:32 by kortolan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ra(Element **element_a)
+void	ra(t_element **element_a)
 {
 	int	tmp;
 
@@ -26,7 +26,7 @@ void	ra(Element **element_a)
 	(*element_a)->nombre = tmp;
 }
 
-void	rb(Element **element_b)
+void	rb(t_element **element_b)
 {
 	int tmp;
 
@@ -39,7 +39,7 @@ void	rb(Element **element_b)
 	(*element_b)->nombre = tmp;
 }
 
-void rr(Element **element_a, Element **element_b)
+void rr(t_element **element_a, t_element **element_b)
 {
 	ra(element_a);
 	rb(element_b);

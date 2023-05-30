@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void    for_3(Element **a)
+void    for_3(t_element **a)
 {
     if ((*a)->number == max(*a))
         ra(a);
@@ -23,13 +23,13 @@ void    for_3(Element **a)
     return ;
 }
 
-void    for_5(Element **a, Element **b)
+void    for_5(t_element **a, t_element **b)
 {
     int min;
     int min2;
 
     min = first_min(*a);
-    min2 = second_min(*a)
+    min2 = second_min(*a);
     while(ft_lst_size((*a)) > 3)
     {
         if ((*a)->number == min || (*a)->number == min2)
@@ -44,7 +44,7 @@ void    for_5(Element **a, Element **b)
     pa(b, a);    
 }
 
-void    little_arg(Element **a, Element **b)
+void    little_arg(t_element **a, t_element **b)
 {
     if (ft_lst_size(*a) == 3)
         for_3(a);
