@@ -6,7 +6,7 @@
 /*   By: kortolan <kortolan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 14:49:21 by kortolan          #+#    #+#             */
-/*   Updated: 2023/05/30 18:45:32 by kortolan         ###   ########.fr       */
+/*   Updated: 2023/05/30 19:16:04 by kortolan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void	swap(t_element *pile)
 
 	if(!pile)
 		return ;
-	tmp = pile->nombre;
-	pile->nombre = pile->suivant->nombre;
-	pile->suivant->nombre = tmp;
+	tmp = pile->number;
+	pile->number = pile->next->number;
+	pile->next->number = tmp;
 }
 
 void	sa(t_element *pile)

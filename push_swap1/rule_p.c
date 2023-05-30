@@ -6,7 +6,7 @@
 /*   By: kortolan <kortolan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 15:04:36 by kortolan          #+#    #+#             */
-/*   Updated: 2023/05/30 18:45:32 by kortolan         ###   ########.fr       */
+/*   Updated: 2023/05/30 19:16:04 by kortolan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void    push(t_element **lst, int Nvnombre)
         t_element *new_element = malloc(sizeof new_element);
         if (new_element != NULL)
         {
-			new_element->nombre = Nvnombre;
-			(*new_element)->suivant = *lst;
+			new_element->number = Nvnombre;
+			(*new_element)->next = *lst;
 			*lst = new_element;
         }
 }
@@ -30,8 +30,8 @@ int pop(t_element **lst)
 	tmp = 0;
     if (lst != NULL)
     {
-        t_element *temp = (*lst)->suivant;
-        tmp = (*lst)->nombre;
+        t_element *temp = (*lst)->next;
+        tmp = (*lst)->number;
         free(*lst);
 		*lst = NULL;
         *lst = temp;
