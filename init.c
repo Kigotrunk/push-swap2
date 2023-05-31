@@ -3,27 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kortolan <kortolan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 15:53:12 by kortolan          #+#    #+#             */
-/*   Updated: 2023/05/29 12:50:29 by marvin           ###   ########.fr       */
+/*   Updated: 2023/05/30 19:00:33 by kortolan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-Element	*lstnew(void *content, Element *next)
+t_element	*lstnew(void *content, t_element *next)
 {
-	Element	*lst;
+	t_element	*lst;
 
-	if (!lst = malloc(sizeof(Element)))
+	if (!lst = malloc(sizeof(t_element)))
 		return NULL;
 	lst->number = content;
 	lst->next = next;
 	return (lst);
 }
 
-Element	*ft_lstlast(Element *lst)
+t_element	*ft_lstlast(t_element *lst)
 {
 	if (!lst)
 		return NULL;
@@ -32,9 +32,9 @@ Element	*ft_lstlast(Element *lst)
 	return (lst);
 }
 
-void ft_lstadd_back(Element **lst, Element *new)
+void ft_lstadd_back(t_element **lst, t_element *new)
 {
-	Element	*lstb;
+	t_element	*lstb;
 
 	if(!(*lst))
 	{
@@ -46,7 +46,7 @@ void ft_lstadd_back(Element **lst, Element *new)
 	new->next = NULL;
 }
 
-void	ft_lst_size(Element *lst)
+int	ft_lst_size(t_element *lst)
 {
 	int	size;
 

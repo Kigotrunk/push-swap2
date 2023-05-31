@@ -3,41 +3,41 @@
 /*                                                        :::      ::::::::   */
 /*   rule_s.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kortolan <kortolan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 14:49:21 by kortolan          #+#    #+#             */
-/*   Updated: 2023/05/29 15:10:20 by marvin           ###   ########.fr       */
+/*   Updated: 2023/05/30 19:16:04 by kortolan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap(Element *pile)
+void	swap(t_element *pile)
 {
 	int	tmp;
 
 	if(!pile)
 		return ;
-	tmp = pile->nombre;
-	pile->nombre = pile->suivant->nombre;
-	pile->suivant->nombre = tmp;
+	tmp = pile->number;
+	pile->number = pile->next->number;
+	pile->next->number = tmp;
 }
 
-void	sa(Element *pile)
+void	sa(t_element *pile)
 {
 	swap(pile);
 	write(1, "sa", 2);
 	write(1, '\n', 1);
 }
 
-void sb(Element *pile)
+void sb(t_element *pile)
 {
 	swap(pile);
 	write(1, "sb", 2);
 	write(1, '\n', 1);
 }
 
-void ss(Element *pile, Element *pile_b)
+void ss(t_element *pile, t_element *pile_b)
 {
 	sa(pile);
 	sb(pile_b);
