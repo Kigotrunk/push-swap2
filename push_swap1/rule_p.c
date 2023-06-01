@@ -5,54 +5,65 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kortolan <kortolan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/27 15:04:36 by kortolan          #+#    #+#             */
-/*   Updated: 2023/05/30 19:16:04 by kortolan         ###   ########.fr       */
+/*   Created: 2023/06/01 15:08:22 by kortolan          #+#    #+#             */
+/*   Updated: 2023/06/01 18:01:51 by kortolan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    push(t_element **lst, int Nvnombre)
+void pa(t_element **stack_a, t_element **stack_b)
 {
-        t_element *new_element = malloc(sizeof new_element);
-        if (new_element != NULL)
-        {
-			new_element->number = Nvnombre;
-			(*new_element)->next = *lst;
-			*lst = new_element;
-        }
+ t_element *a;
+ t_element *b;
+ t_element *tmp;
+
+ a = *stack_a;
+ b = *stack_b;
+ if (!b)
+  return ;
+ tmp = b;
+ b = b->next;
+ *stack_b = b;
+ if (!a)
+ {
+  a = tmp;
+  a->next = NULL;
+  *stack_a = a;
+ }
+ else
+ {
+  tmp->next = a;
+  *stack_a = tmp;
+ }
+ write(1, "pa\n", 3);
+ return ;
 }
 
-int pop(t_element **lst)
+void pb(t_element **stack_b, t_element **stack_a)
 {
-    int	tmp;
+ t_element *a;
+ t_element *b;
+ t_element *tmp;
 
-	tmp = 0;
-    if (lst != NULL)
-    {
-        t_element *temp = (*lst)->next;
-        tmp = (*lst)->number;
-        free(*lst);
-		*lst = NULL;
-        *lst = temp;
-    }
-    return tmp;
-}
-
-void    pa(t_element **a, t_element **b)
-{
-	int	tmp;
-
-	tmp = 0;
-	tmp = pop(b);
-	push(a, tmp);
-}
-
-void    pb(t_element **a, t_element **b)
-{
-	int first_a;
-
-	first_a = 0;
-	first_a = pop(a);
-	push(b, first_a);
+ a = *stack_b;
+ b = *stack_a;
+ if (!b)
+  return ;
+ tmp = b;
+ b = b->next;
+ *stack_a = b;
+ if (!a)
+ {
+  a = tmp;
+  a->next = NULL;
+  *stack_b = a;
+ }
+ else
+ {
+  tmp->next = a;
+  *stack_b = tmp;
+ }
+ write(1, "pb\n", 3);
+ return ;
 }

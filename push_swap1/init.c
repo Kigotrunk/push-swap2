@@ -12,11 +12,12 @@
 
 #include "push_swap.h"
 
-t_element	*lstnew(void *content, t_element *next)
+t_element	*lstnew(int content, t_element *next)
 {
 	t_element	*lst;
 
-	if (!lst = malloc(sizeof(t_element)))
+	lst = malloc(sizeof(t_element));
+	if (!lst)
 		return NULL;
 	lst->number = content;
 	lst->next = next;
@@ -56,7 +57,33 @@ int	ft_lst_size(t_element *lst)
 	while (lst)
 	{
 		size++;
-		lst = lst->next
+		lst = lst->next;
 	}
 	return (size);
+}
+
+int	ft_atoi(const char *str)
+{
+	int	x;
+	int	i;
+	int	y;
+
+	i = 0;
+	x = 1;
+	y = 0;
+	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t' || str[i] == '\v'
+		|| str[i] == '\f' || str[i] == '\r')
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			x *= -1;
+		i++;
+	}
+	while (str[i] >= 48 && str[i] <= 57)
+	{
+		y = y * 10 + (str[i] - 48);
+		i++;
+	}
+	return (y * x);
 }

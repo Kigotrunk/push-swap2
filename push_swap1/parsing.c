@@ -15,39 +15,38 @@
 void    parsing (t_element **sequence, int argc, char **argv)
 {
     int nb_arg;
-    int j;
 
     nb_arg = argc - 1;
     while (nb_arg > 0)
     {
-        add_Element(*sequence, argv[nb_arg]);
+        add_Element(sequence, argv[nb_arg]);
         nb_arg--;
     }
-
+    same_number(*sequence);
 }
 
 void    add_Element(t_element **sequence, char *arg)
 {
     int i;
 
-    if(!arg[0])
+    if(!arg || !arg[0])
         EXIT_FAILURE;
     i = ft_atoi(arg);
     if (arg[0] != '-' && i < 0)  
-        EXIT_FAILURE;
+        exit(EXIT_FAILURE);
     *sequence = lstnew(i, *sequence);        
 }
 
 void    same_number(t_element *arg)
 {
-    t_element temp;
-    t_element temp1;
+    t_element *temp;
+    t_element *temp1;
     int     nb_of_same;
 
     temp = arg;
     while(temp)
     {
-        nb_of_same == 0;
+        nb_of_same = 0;
         temp1 = temp;
         while (temp1)
         {                 
@@ -55,9 +54,10 @@ void    same_number(t_element *arg)
             {
                 nb_of_same++;
                 if (nb_of_same >=2)
-                    EXIT_FAILURE;
+                    error();
             }
+            temp1 = temp1->next;
         }
-        temp1 = temp1->next;
+        temp = temp->next;
     }
 }

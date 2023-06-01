@@ -10,22 +10,29 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	rrab(Element **element)
+#include "push_swap.h"
+
+void	rrab(t_element **element)
 {
-	Element	*tmp2;
-	Element *pile;
-	Element *last;
+	t_element	*tmp2;
+	t_element *pile;
+	t_element *last;
 
 	pile = *element;
-	if (!(pile && pile->next))
-		return (0);
-	last = pile;
+	last = *element;
+	tmp2 = *element;
+	if (*element == NULL)
+		return ;
 	while (last->next)
 	{
-		tmp2 = last;
 		last = last->next;
+		if (last->next != NULL)
+			pile = pile->next;
 	}
-	last->next = pile;
-	tmp2->next = NULL;
-	*element = tmp2;
+	if (last->next == NULL)
+	{
+		last->next = tmp2;
+		pile->next = NULL;
+	}
+	*element = last;
 }

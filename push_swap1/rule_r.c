@@ -14,29 +14,40 @@
 
 void	ra(t_element **element_a)
 {
-	int	tmp;
+	t_element *tmp;
+	int							start;
 
-	tmp = (*element_a)->number;
-
-	while ((*element_a)->next)
-	{
-		(*element_a)->number = (*element_a)->next->number;
-		(*element_a) = (*element_a)->next
-	}
-	(*element_a)->number = tmp;
+	tmp = *element_a;
+	start = tmp->number;
+	if (!tmp || !tmp->next)
+		return ;
+		while (tmp->next != NULL)
+		{
+			tmp->number = tmp->next->number;
+			tmp = tmp->next;
+		}
+		tmp->number = start;
+	write(1, "ra", 2);
+	write(1, "\n", 1);
 }
 
 void	rb(t_element **element_b)
 {
-	int tmp;
+		t_element *tmp;
+	int							start;
 
-	tmp = (*element_b)->number;
-	while ((*element_b)->next)
-	{
-		(*element_b)->number = (*element_b)->next->number;
-		(*element_b) = (*element_b)->next;
-	}
-	(*element_b)->number = tmp;
+	tmp = *element_b;
+	start = tmp->number;
+	if (!tmp || !tmp->next)
+		return ;
+		while (tmp->next != NULL)
+		{
+			tmp->number = tmp->next->number;
+			tmp = tmp->next;
+		}
+		tmp->number = start;
+	write(1, "rb", 2);
+	write(1, "\n", 1);
 }
 
 void rr(t_element **element_a, t_element **element_b)

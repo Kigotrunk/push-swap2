@@ -12,17 +12,17 @@
 
 #include "push_swap.h"
 
-void index_init(t_element **stack_a)
+void index_init(t_element *stack_a)
 {
- while (*stack_a)
+ while (stack_a)
  {
-  (*stack_a)->index == -1;
-  (*stack_a) = (*stack_a)->next;
+  stack_a->index = -1;
+  stack_a = stack_a->next;
  }
  return ;
 } 
 
-void index(t_element **stack_a)
+void index_give(t_element **stack_a)
 {
  int i;
  int j;
@@ -36,7 +36,7 @@ void index(t_element **stack_a)
  {
   while (tmp)
   {
-   if ((*tmp)->number == i)
+   if (tmp->number == i)
     {
      tmp->index = j;
      j++;

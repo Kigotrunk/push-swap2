@@ -14,15 +14,24 @@
 
 int main (int argc, char **argv)
 {
-    t_element *stack_a;
-    t_element *stack_b;
-    int     i;
+    t_element   *stack_a;
+    t_element   *stack_b;
 
     if (argc == 1)
         return (0);
     parsing(&stack_a, argc, argv);
-    index(&stack_a);
-    if (argc <= 5)
+    index_give(&stack_a);
+    if (argc == 6 || argc == 4 || argc == 3)
         little_arg(&stack_a, &stack_a);
-    
+    else if (argc <= 100)
+        big_arg(&stack_a, &stack_b, 20);
+    else
+        big_arg(&stack_a, &stack_b, 70);
+    printf("two\n");
+}
+
+void    error()
+{
+    write (2, "error\n", 6);
+    exit(EXIT_FAILURE);
 }

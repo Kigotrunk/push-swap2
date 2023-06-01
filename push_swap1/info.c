@@ -17,8 +17,8 @@ int max(t_element *arg)
     int max;
 
     max = arg->number;
-    arg = arg->next
-    while (arg)
+    arg = arg->next;
+    while(arg)
     {
         if (arg->number > max)
             max = arg->number;
@@ -32,7 +32,7 @@ int first_min(t_element *arg)
     int min;
 
     min = arg->number;
-    arg = arg->next
+    arg = arg->next;
     while (arg)
     {
         if (arg->number < min)
@@ -47,7 +47,7 @@ int first_min_index(t_element *arg)
     int min;
 
     min = arg->number;
-    arg = arg->next
+    arg = arg->next;
     while (arg)
     {
         if (arg->number < min && arg->index == -1)
@@ -62,7 +62,7 @@ int second_min(t_element *arg)
     int min;
     int min2;
 
-    min = min(arg);
+    min = first_min(arg);
     if (arg->number != min)
         min2 = arg->number;
     else
