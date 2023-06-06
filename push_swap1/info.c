@@ -42,21 +42,6 @@ int first_min(t_element *arg)
     return (min);
 }
 
-int first_min_index(t_element *arg)
-{
-    int min;
-
-    min = arg->number;
-    arg = arg->next;
-    while (arg)
-    {
-        if (arg->number < min && arg->index == -1)
-            min = arg->number;
-        arg = arg->next;
-    }
-    return (min);
-}
-
 int second_min(t_element *arg)
 {
     int min;

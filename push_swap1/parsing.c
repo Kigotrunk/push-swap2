@@ -15,6 +15,7 @@
 void    parsing (t_element **sequence, int argc, char **argv)
 {
     int nb_arg;
+    int i;
 
     nb_arg = argc - 1;
     while (nb_arg > 0)
@@ -23,6 +24,12 @@ void    parsing (t_element **sequence, int argc, char **argv)
         nb_arg--;
     }
     same_number(*sequence);
+    i = 0; 
+    while(i < argc)
+    {
+        //arg_int(argv, i);
+        i++;
+    }
 }
 
 void    add_Element(t_element **sequence, char *arg)
@@ -59,5 +66,24 @@ void    same_number(t_element *arg)
             temp1 = temp1->next;
         }
         temp = temp->next;
+    }
+}
+
+void    arg_int(char **argv, int n)
+{
+    int i;
+
+    i = 0;
+    if (argv[n][i] == '-')
+    {
+        i++;
+        if (!argv[n][i])
+            error();
+    }
+    while(argv[n][i])
+    {
+        if(!ft_isdigit(argv[n][i]))
+            error();
+        i++;
     }
 }

@@ -14,11 +14,15 @@
 
 void    for_3(t_element **a)
 {
-    printf("ok\n");
-    if ((*a)->number == max(*a))
+    int i;
+
+    i = max(*a);
+    if ((*a)->number == i)
         ra(a);
-    else if ((*a)->next->number == max(*a))
+    if ((*a)->next->number == i)
+    {
         rrab(a);
+    }
     if ((*a)->number > (*a)->next->number)
         sa(a);
     return ;
@@ -26,22 +30,18 @@ void    for_3(t_element **a)
 
 void    for_5(t_element **a, t_element **b)
 {
-    int min;
-    int min2;
     int x;
 
-    min = first_min(*a);
-    min2 = second_min(*a);
     x = 0;
     while(x < 2)
     {
-        if ((*a)->number == min || (*a)->number == min2)
+        if ((*a)->index == 1 || (*a)->index == 2)
         {
-            pa(a, b);
+            pb(a, b);
             x++;
         }
         else
-            ra(a);
+            rrab(a);
     }
     for_3(a);
     if ((*b)->next->number > (*b)->number)
@@ -53,13 +53,18 @@ void    for_5(t_element **a, t_element **b)
 void    little_arg(t_element **a, t_element **b)
 {
     if (ft_lst_size(*a) == 3)
+    {
         for_3(a);
+        return ;
+    }
     else if (ft_lst_size(*a) == 2)
     {
         if ((*a)->number > (*a)->next->number)
             sa(a); 
     }
     else if (ft_lst_size(*a) == 5)
+    {
         for_5(a, b);
+    }
     return ;
 }

@@ -18,6 +18,7 @@ void	rrab(t_element **element)
 	t_element *pile;
 	t_element *last;
 
+	write(1, "rr\n", 3);
 	pile = *element;
 	last = *element;
 	tmp2 = *element;

@@ -24,9 +24,9 @@ int main (int argc, char **argv)
     if (argc == 6 || argc == 4 || argc == 3)
         little_arg(&stack_a, &stack_a);
     else if (argc <= 100)
-        big_arg(&stack_a, &stack_b, 20);
+        big_arg(&stack_a, &stack_b, 15);
     else
-        big_arg(&stack_a, &stack_b, 70);
+        big_arg(&stack_a, &stack_b, 30);
     printf("two\n");
 }
 

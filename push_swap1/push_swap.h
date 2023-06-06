@@ -17,6 +17,7 @@
 # include <limits.h>
 # include <unistd.h>
 # include <stdio.h>
+# include "libft/libft.h"
 
 
 typedef struct s_element
@@ -37,8 +38,9 @@ void    for_5(t_element **a, t_element **b);
 void    all_in_b(t_element **stack_a, t_element **stack_b, int n);
 int     max(t_element *arg);
 int     first_min(t_element *arg);
-void    pa(t_element **stack_a, t_element **stack_b);
-void    pb(t_element **stack_b, t_element **stack_a);
+void    push(t_element **a, t_element **b);
+void    pa(t_element **a, t_element **b);
+void    pb(t_element **a, t_element **b);
 void	ra(t_element **element_a);
 void	rb(t_element **element_b);
 void    rr(t_element **element_a, t_element **element_b);
@@ -56,5 +58,6 @@ void    index_give(t_element **stack_a);
 void    index_init(t_element *stack_a);
 int	    ft_atoi(const char *str);
 void    error();
+void    arg_int(char **argv, int n);
 
 #endif

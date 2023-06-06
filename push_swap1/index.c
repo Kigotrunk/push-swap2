@@ -49,3 +49,21 @@ void index_give(t_element **stack_a)
  }
 }
 
+int first_min_index(t_element *arg)
+{
+    int min;
+
+    while(arg->index != -1 && arg->next != NULL)
+      arg = arg->next;
+    min = arg->number;
+    if (arg->next == NULL)
+      return (min);
+    while (arg)
+    {
+        if (arg->number < min && arg->index == -1)
+            min = arg->number;
+        arg = arg->next;
+    }
+    return (min);
+}
+
